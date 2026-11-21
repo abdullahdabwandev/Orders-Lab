@@ -1,1 +1,1 @@
-Daily order limit: 40
+Daily order limit: 45
