@@ -1,0 +1,26 @@
+name: Orders Lab CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Check training files
+        shell: bash
+        run: |
+          test -f capacity.txt
+          test -f search-guide.txt
+          grep -Fq 'Daily order limit: 45' capacity.txt
+          grep -Fq 'Search orders by order ID' search-guide.txt
