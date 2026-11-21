@@ -22,5 +22,5 @@ jobs:
         run: |
           test -f capacity.txt
           test -f search-guide.txt
-          grep -Fq 'Daily order limit: 46' capacity.txt
+          grep -Fq 'Daily order limit: 45' capacity.txt
           grep -Fq 'Search orders by order ID' search-guide.txt
